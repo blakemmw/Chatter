@@ -1,0 +1,52 @@
+html,
+body {
+  height: 100%;
+}
+#chatContainer {
+  height: 90vh !important;
+  overflow-y: auto;
+  padding-left: 2vw;
+  padding-top: 2vh;
+}
+
+.actions{
+  display: inline-flex;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.username-input, .message-input{
+  display: inline-flex;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+
+.ui.floating.message{
+  float: left;
+  width: 75%;
+  margin-top: 2%;
+
+}
+
+
+.ui.info.message{
+  float: right;
+  width: 75%;
+  margin-top: 2%;
+}

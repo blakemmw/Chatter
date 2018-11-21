@@ -1,0 +1,60 @@
+<div>
+  <div id="chatContainer">
+
+    <div id="chat">
+
+      <div id="message" *ngFor="let item of messages.slice().reverse()">
+
+        <div *ngIf="item.clientID === clientID" class="ui info message">
+          <h4 class="messageUser">{{item.un}}</h4>
+          <p>{{item.msg}}</p>
+          <span class="time-right">{{item.timeStamp}}</span>
+          <br>
+        </div>
+
+        <div *ngIf="item.clientID !== clientID" class="ui floating message">
+          <h4 class="messageUser">{{item.un}}</h4>
+          <p>{{item.msg}}</p>
+          <p>{{item.clientId}}</p>
+
+          <span class="time-right">{{item.timeStamp}}</span>
+          <br>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <button class="ui button yellow create_btn" type="button" id="test">Set Username</button>
+
+  <div class="ui modal test">
+    <i class="close icon"></i>
+    <div class="header">
+      Welcome to Chatter   
+    </div>
+    <div class="image content">
+      <div class="description">
+        <div class="ui header">Hello {{username}} </div>
+        <p>What do you want to be called?</p>
+        <input class="ui input" [(ngModel)]="username">
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui black button" (click)="resetUsername()">
+        Reset username
+      </div>
+      <div class="ui positive right labeled icon button">
+        Yep, that's me
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="actions">
+    <div class="message-input">
+      <input [(ngModel)]="messageText" id="message_box" placeholder="type a message" />
+      <button id="sendmsg" class="ui button" (click)="sendMessage()" type=submit>Send</button>
+    </div>
+  </div>
+</div>
